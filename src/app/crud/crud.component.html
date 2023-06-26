@@ -1,0 +1,40 @@
+<form (ngSubmit)="submitD()" [formGroup]="emp_details">
+  <div><label for="emp_id">Employee ID</label></div>
+  <div>
+    <input
+      type="text"
+      id="emp_id"
+      formControlName="emp_id"
+      placeholder="Employee ID"
+    />
+  </div>
+  <div><label for="name">Name</label></div>
+  <div>
+    <input type="text" id="name" formControlName="name" placeholder="Name" />
+  </div>
+  <div><label for="age">Age</label></div>
+  <div>
+    <input type="number" id="age" formControlName="age" placeholder="Age" />
+  </div>
+  <div><label for="gender">Gender</label></div>
+  <select
+    name="gender"
+    id="gender"
+    formControlName="gender"
+    placeholder="Gender"
+  >
+    <option value="male">Male</option>
+    <option value="female">Female</option>
+    <option value="other">Other</option>
+  </select>
+  <div><label for="mobile_no">Mobile No</label></div>
+  <div>
+    <input
+      type="text"
+      id="mobile_no"
+      formControlName="mobile_no"
+      placeholder="Mobile No"
+    />
+  </div>
+  <button type="submit">Add</button>
+</form>
