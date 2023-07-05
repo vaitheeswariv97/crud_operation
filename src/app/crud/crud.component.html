@@ -1,4 +1,4 @@
-<form (ngSubmit)="submitD()" [formGroup]="emp_details">
+<form [formGroup]="emp_details">
   <div><label for="emp_id">Employee ID</label></div>
   <div>
     <input
@@ -36,5 +36,10 @@
       placeholder="Mobile No"
     />
   </div>
-  <button type="submit">Add</button>
+  <button (click)="submitD()">Add</button>
+  <button (click)="submitU()">Update</button>
 </form>
+<br />
+<app-crud-show></app-crud-show>
+
+<app-crud-remove></app-crud-remove>

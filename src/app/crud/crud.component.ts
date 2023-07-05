@@ -15,9 +15,9 @@ export class CrudComponent implements OnInit {
     this.emp_details = new FormGroup({
       emp_id: new FormControl(null, Validators.required),
       name: new FormControl(null, Validators.required),
-      age: new FormControl(null),
-      gender: new FormControl(null),
-      mobile_no: new FormControl(null),
+      age: new FormControl(null, Validators.required),
+      gender: new FormControl(null, Validators.required),
+      mobile_no: new FormControl(null, Validators.required),
     });
   }
 
@@ -27,6 +27,16 @@ export class CrudComponent implements OnInit {
       emp_det = this.emp_details.getRawValue();
       console.log(emp_det);
       this.api.post('crud/add', emp_det).subscribe((data: any) => {
+        console.log(data);
+      });
+    }
+  }
+  submitU() {
+    if (this.emp_details.valid) {
+      let emp_det: any = {};
+      emp_det = this.emp_details.getRawValue();
+      console.log(emp_det);
+      this.api.patch('crud/update', emp_det).subscribe((data: any) => {
         console.log(data);
       });
     }

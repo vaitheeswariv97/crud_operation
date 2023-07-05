@@ -19,8 +19,21 @@ export class ApiService {
       return res;
     });
   }
+
+  patch(url: any, payload: any) {
+    return this._http.patch(`${this.baseUrl}${url}`, payload).pipe((res) => {
+      return res;
+    });
+  }
+
   put(url: any, payload: any) {
     return this._http.put(`${this.baseUrl}${url}`, payload).pipe((res) => {
+      return res;
+    });
+  }
+
+  delete(url: any) {
+    return this._http.delete(`${this.baseUrl}${url}`).pipe((res) => {
       return res;
     });
   }

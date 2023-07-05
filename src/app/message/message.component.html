@@ -1,0 +1,36 @@
+<!--src\app\app.component.html-->
+<h1>Live Chat</h1>
+<br />
+<div class="row">
+  <div class="column">
+    <textarea
+      [(ngModel)]="message"
+      name="contentInput"
+      cols="40"
+      rows="5"
+    ></textarea>
+    <br />
+    <button (click)="addChat()">Send Message</button>
+  </div>
+</div>
+<br />
+<div>
+  <h1>Sent Messages</h1>
+  <br />
+  <ul>
+    <li *ngFor="let message of messages">
+      {{ message }}
+    </li>
+  </ul>
+</div>
+
+<br />
+<div>
+  <h1>Received Messages</h1>
+  <br />
+  <ul>
+    <li *ngFor="let receive of received">
+      {{ receive }}
+    </li>
+  </ul>
+</div>

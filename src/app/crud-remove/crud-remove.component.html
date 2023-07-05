@@ -1,0 +1,7 @@
+<form [formGroup]="emp_id" (ngSubmit)="submitR()">
+  <div><label for="id">Employee ID</label></div>
+  <div>
+    <input type="text" id="id" formControlName="id" placeholder="Employee ID" />
+  </div>
+  <button type="submit">Remove</button>
+</form>

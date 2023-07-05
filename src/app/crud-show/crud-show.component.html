@@ -1,0 +1,20 @@
+<table>
+  <thead>
+    <tr>
+      <th>Employee ID</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Gender</th>
+      <th>Mobile NO</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let emp of emp_det">
+      <td>{{ emp.emp_id }}</td>
+      <td>{{ emp.name }}</td>
+      <td>{{ emp.age }}</td>
+      <td>{{ emp.gender }}</td>
+      <td>{{ emp.mobile_no }}</td>
+    </tr>
+  </tbody>
+</table>
