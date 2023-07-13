@@ -14,11 +14,13 @@ export class MessageComponent implements OnInit {
   public messages: any[] = [];
   public received: any[] = [];
   public receive: any = '';
+  public msg: any = [];
 
   constructor(private WebsocketService: WebsocketService) {}
   ngOnInit(): void {
     this.WebsocketService.receiveChat().subscribe((message: any) => {
       this.received.push(message);
+      this.msg.push({ id: 'receive', data: message });
     });
     this.WebsocketService.getUsers().subscribe((users: any) => {
       this.users = users;
@@ -27,6 +29,7 @@ export class MessageComponent implements OnInit {
 
   addChat() {
     this.messages.push(this.message);
+    this.msg.push({ id: 'message', data: this.message });
     this.WebsocketService.sendChat(this.message);
     this.message = '';
   }
