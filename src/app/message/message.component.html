@@ -29,33 +29,38 @@
             ></a>
           </div>
         </div>
-        <div class="panel-body msg_container_base" *ngFor="let data of msg">
-          <div class="row msg_container base_sent" *ngIf="data.id == 'message'">
-            <div class="col-md-10 col-xs-10">
-              <div class="messages msg_sent">
-                <p>
-                  {{ data.data }}
-                </p>
-                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+        <div class="panel-body msg_container_base">
+          <div *ngFor="let data of msg">
+            <div
+              class="row msg_container base_sent"
+              *ngIf="data.id == 'message'"
+            >
+              <div class="col-md-10 col-xs-10">
+                <div class="messages msg_sent">
+                  <p>
+                    {{ data.data }}
+                  </p>
+                  <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                </div>
+              </div>
+              <div class="col-md-2 col-xs-2 avatar">
+                <img src="assets/profile.jpg" class="img-fluid" />
               </div>
             </div>
-            <div class="col-md-2 col-xs-2 avatar">
-              <img src="assets/profile.jpg" class="img-fluid" />
-            </div>
-          </div>
-          <div
-            class="row msg_container base_receive"
-            *ngIf="data.id == 'receive'"
-          >
-            <div class="col-md-2 col-xs-2 avatar">
-              <img src="assets/profile.jpg" class="img-fluid" />
-            </div>
-            <div class="col-md-10 col-xs-10">
-              <div class="messages msg_receive">
-                <p>
-                  {{ data.data }}
-                </p>
-                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+            <div
+              class="row msg_container base_receive"
+              *ngIf="data.id == 'receive'"
+            >
+              <div class="col-md-2 col-xs-2 avatar">
+                <img src="assets/profile.jpg" class="img-fluid" />
+              </div>
+              <div class="col-md-10 col-xs-10">
+                <div class="messages msg_receive">
+                  <p>
+                    {{ data.data }}
+                  </p>
+                  <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+                </div>
               </div>
             </div>
           </div>
