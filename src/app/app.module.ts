@@ -11,7 +11,8 @@ import { CrudRemoveComponent } from './crud-remove/crud-remove.component';
 import { MessageComponent } from './message/message.component';
 import { SocketIoModule, SocketIoConfig } from 'ngx-socket-io';
 const config: SocketIoConfig = {
-  url: 'http://192.168.34.75:5000',
+  //url: 'http://192.168.34.75:5000',
+  url: 'http://localhost:5000',
   options: {},
 };
 

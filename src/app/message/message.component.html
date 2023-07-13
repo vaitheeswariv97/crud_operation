@@ -1,36 +1,90 @@
 <!--src\app\app.component.html-->
-<h1>Live Chat</h1>
-<br />
-<div class="row">
-  <div class="column">
-    <textarea
-      [(ngModel)]="message"
-      name="contentInput"
-      cols="40"
-      rows="5"
-    ></textarea>
-    <br />
-    <button (click)="addChat()">Send Message</button>
-  </div>
-</div>
-<br />
-<div>
-  <h1>Sent Messages</h1>
-  <br />
-  <ul>
-    <li *ngFor="let message of messages">
-      {{ message }}
-    </li>
-  </ul>
-</div>
 
-<br />
-<div>
-  <h1>Received Messages</h1>
-  <br />
-  <ul>
-    <li *ngFor="let receive of received">
-      {{ receive }}
-    </li>
-  </ul>
+<div class="container">
+  <div
+    class="row chat-window col-xs-5 col-md-3"
+    id="chat_window_1"
+    style="margin-left: 10px"
+  >
+    <div class="col-xs-12 col-md-12">
+      <div class="panel panel-default">
+        <div class="panel-heading top-bar">
+          <div class="col-md-8 col-xs-8">
+            <h3 class="panel-title">
+              <span class="glyphicon glyphicon-comment"></span> Chat
+            </h3>
+          </div>
+          <div class="col-md-4 col-xs-4" style="text-align: right">
+            <a href="#"
+              ><span
+                id="minim_chat_window"
+                class="glyphicon glyphicon-minus icon_minim"
+              ></span
+            ></a>
+            <a href="#"
+              ><span
+                class="glyphicon glyphicon-remove icon_close"
+                data-id="chat_window_1"
+              ></span
+            ></a>
+          </div>
+        </div>
+        <div class="panel-body msg_container_base">
+          <div
+            class="row msg_container base_sent"
+            *ngFor="let message of messages"
+          >
+            <div class="col-md-10 col-xs-10">
+              <div class="messages msg_sent">
+                <p>
+                  {{ message }}
+                </p>
+                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+              </div>
+            </div>
+            <div class="col-md-2 col-xs-2 avatar">
+              <img src="assets/profile.jpg" class="img-fluid" />
+            </div>
+          </div>
+          <div
+            class="row msg_container base_receive"
+            *ngFor="let receive of received"
+          >
+            <div class="col-md-2 col-xs-2 avatar">
+              <img src="assets/profile.jpg" class="img-fluid" />
+            </div>
+            <div class="col-md-10 col-xs-10">
+              <div class="messages msg_receive">
+                <p>
+                  {{ receive }}
+                </p>
+                <time datetime="2009-11-13T20:00">Timothy • 51 min</time>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="panel-footer">
+          <div class="input-group">
+            <input
+              [(ngModel)]="message"
+              id="btn-input"
+              type="text"
+              class="form-control input-md chat_input"
+              placeholder="Write your message here..."
+            />
+            <span class="input-group-btn">
+              <button
+                id="btn-chat"
+                slot="end"
+                class="send-chat-button"
+                (click)="addChat()"
+              >
+                Send
+              </button>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

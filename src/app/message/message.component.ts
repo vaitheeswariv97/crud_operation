@@ -10,8 +10,10 @@ import { AnyCatcher } from 'rxjs/internal/AnyCatcher';
 export class MessageComponent implements OnInit {
   public users: number = 0;
   public message: any = '';
+  public sent_message: any = '';
   public messages: any[] = [];
   public received: any[] = [];
+  public receive: any = '';
 
   constructor(private WebsocketService: WebsocketService) {}
   ngOnInit(): void {
