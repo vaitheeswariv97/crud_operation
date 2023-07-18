@@ -17,12 +17,17 @@
     "moduleResolution": "node",
     "importHelpers": true,
     "paths": {
-      "rxjs": ["node_modules/rxjs"]
+      "rxjs": [
+        "node_modules/rxjs"
+      ]
     },
-
-    "target": "es2020",
+    "target": "ES2022",
     "module": "es2020",
-    "lib": ["es2020", "dom"]
+    "lib": [
+      "es2020",
+      "dom"
+    ],
+    "useDefineForClassFields": false
   },
   "angularCompilerOptions": {
     "enableI18nLegacyMessageIdFormat": false,
